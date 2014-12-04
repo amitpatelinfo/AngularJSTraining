@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact App</title>
+</head>
+<body ng-app='ContactApp'>
+    <div ng-controller='ContactController'>
+        <h3> New Contact </h3>
+        <input type="text" placeholder"name" ng-model="newContact.name">
+        <input type="number" placeholder"phone" ng-model="newContact.phone">
+        <input type="text" placeholder"address" ng-model="newContact.address">
+        <input type="date" placeholder"date" ng-model="newContact.date">
+        <input type="button" value="Add contact" ng-click="addContact(newContact)">
+        <br>
+        <br>
+        <ul>
+            <li ng-repeat="contact in contacts | filter: 'USA' | orderBy: 'date'">
+                <strong>{{contact.name | uppercase}}</strong> ({{contact.date | date : 'yyyy-MM-dd'}})
+            </li>
+        </ul>
+    </div>
+
+    <script src="angular.min.js"></script>
+
+    <script type="text/javascript">
+        
+        var app = angular.module('ContactApp',[]);
+        app.controller('ContactController', ContactController);
+
+        function ContactController ($scope) {
+            $scope.newContact = [];
+            $scope.contacts = [
+                {name:'Adam', phone:'8798766545', address:'Pune , India', date:'1288323623006'},
+                {name:'Chris', phone:'8734567889', address:'Austin, USA', date:'1388323623006'},
+                {name:'Chong', phone:'9878988675', address:'Bumrah\'s , Coba', date:'1244323623006'},
+                {name:'Yaoyang', phone:'9887698932', address:'Korma , Korea', date:'1458323623006'},
+                {name:'Stephan', phone:'7679829134', address:'Omaha , USA', date:'1388323623006'}
+            ];
+            $scope.addContact = function(contact){
+                $scope.contacts.push(contact);   
+                $scope.newContact = [];         
+            }
+
+        }
+    </script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"></script>-->
+</body>
+</html>

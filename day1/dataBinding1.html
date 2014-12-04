@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello World Application</title>
+</head>
+<body ng-app>
+    <div ng-init="greeting={greeter:'Amit', message:'Hello Everyone'}">
+        <input type="text" ng-model="greeting.greeter">
+        <input type="text" ng-model="greeting.message">
+        <p>
+            {{greeting.greeter}} says : {{greeting.message}}
+        </p>
+    </div>
+    <script src="angular.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"></script>-->
+</body>
+</html>

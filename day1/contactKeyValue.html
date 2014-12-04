@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact App</title>
+</head>
+<body ng-app>
+    <div ng-init="contacts=[
+        {name:'Adam', phone:'8798766545', address:'Pune , India', date:'17-01-2014'},
+        {name:'Chris', phone:'8734567889', address:'Austin, Texax', date:'27-05-2014'},
+        {name:'Chong', phone:'9878988675', address:'Bumrah\'s , Coba', date:'08-02-2014'},
+        {name:'Yaoyang', phone:'9887698932', address:'Korma , Korea', date:'06-03-2014'},
+        {name:'Stephan', phone:'7679829134', address:'Omaha , USA', date:'07-11-2014'}
+    ]
+    ">
+        <ul>
+            <li ng-repeat="contact in contacts">
+                <ul>
+                    <li ng-repeat="(key, value) in contact">
+                        <strong>{{key}}</strong> ({{value}})
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <script src="angular.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"></script>-->
+</body>
+</html>
