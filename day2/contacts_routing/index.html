@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+
+<body ng-app='ContactApp'>
+<!--
+<form novalidate>
+  <input tpye="text" ng-model="name" required maxlength="5">
+  <input type="email" ng-model="email">
+  <input type="phone" ng-model="phone" ng-pattern="/[0-9]/">
+  <input type="submit" value="submit">
+  <input type="reset" value="reset" ng-click="resetForm()">
+</form>
+
+-->
+<div ng-controller='ContactController'>
+  <h2>Contact Details:</h2>
+  <a ng-href="#/contacts">List</a><br><a ng-href="#/contacts/table">Table</a>
+  <div ng-view></div>
+</div>
+<script src="./angular.js"></script>
+<script src="./angular-route.min.js"></script>
+<script type="text/ng-template" id="/contactsList.html" src="./contactsList.html"></script>
+<script type="text/ng-template" id="/contactsTable.html" src="./contactsTable.html"></script>
+  
+<script src="./app.js"></script>
+<script src="./controllers/contactController.js"></script>
+<script src="./services/contactData.js"></script>
+
+</body>
+</html>
