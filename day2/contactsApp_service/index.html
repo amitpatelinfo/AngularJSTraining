@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact App</title>
+</head>
+<style>
+  input.ng-invalid {
+    background-color: red;
+  }
+</style>
+<body ng-app='ContactApp'>
+<div ng-controller='ContactController'>
+  office add = {{officeInfo.officeAdd}}
+  <ul>
+    <li ng-repeat="contact in contacts | orderBy: 'date'">
+      <strong>{{contact.name | uppercase}}</strong> ({{contact.date | date : 'yyyy-MM-dd'}})
+    </li>
+  </ul>
+</div>
+<script src="angular.js"></script>
+<script src="app.js"></script>
+<script src="controllers/contactController.js"></script>
+<script src="services/contactData.js"></script>
+<script src="services/officeData.js"></script>
+</body>
+</html>
